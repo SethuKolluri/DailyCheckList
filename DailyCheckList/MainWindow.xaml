@@ -16,6 +16,11 @@
                         <Button BorderBrush="Black" Background="Black" Click="Button_Click">
                             <TextBlock Text="{Binding Path=Name,
             diag:PresentationTraceSources.TraceLevel=High}" />
+                            <Button.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Delete" Click="Delete_MenuItem_Click"></MenuItem>
+                                </ContextMenu>
+                            </Button.ContextMenu>
                         </Button>
                     </StackPanel>
                 </DataTemplate>

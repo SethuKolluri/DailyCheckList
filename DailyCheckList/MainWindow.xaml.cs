@@ -96,5 +96,23 @@ namespace DailyCheckList
                 xml.DumpItems(list);
             }
         }
+
+        private void Delete_MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Button MyButton = null;
+
+            if (sender is MenuItem mnu)
+            {
+                ContextMenu MyContextMenu = (ContextMenu)mnu.Parent;
+                MyButton = MyContextMenu.PlacementTarget as Button;
+            }
+            if (null == MyButton) return;
+
+            CheckActivity thsActivity = (CheckActivity)MyButton.DataContext;
+            if (null == thsActivity) return;
+
+            Items.Remove(thsActivity);
+        }
+
     }
 }
